@@ -1,0 +1,85 @@
+swagger: "2.0"
+info:
+    title: Expense Service
+    description: Inputs and calculations on expenses
+    version: ""
+host: localhost:8080
+consumes:
+    - application/json
+    - application/xml
+    - application/gob
+produces:
+    - application/json
+    - application/xml
+    - application/gob
+paths:
+    /ledger/expenses:
+        post:
+            tags:
+                - expense
+            summary: AddExpense expense
+            operationId: expense#AddExpense
+            parameters:
+                - name: AddExpenseRequestBody
+                  in: body
+                  required: true
+                  schema:
+                    $ref: '#/definitions/ExpenseAddExpenseRequestBody'
+                    required:
+                        - amount
+                        - category
+            responses:
+                "200":
+                    description: OK response.
+                    schema:
+                        $ref: '#/definitions/ExpenseAddExpenseResponseBody'
+            schemes:
+                - http
+    /openapi.json:
+        get:
+            tags:
+                - expense
+            summary: Download ./gen/http/openapi.json
+            operationId: expense#/openapi.json
+            responses:
+                "200":
+                    description: File downloaded
+                    schema:
+                        type: file
+            schemes:
+                - http
+definitions:
+    ExpenseAddExpenseRequestBody:
+        title: ExpenseAddExpenseRequestBody
+        type: object
+        properties:
+            amount:
+                type: number
+                description: amount spent
+                example: 0.37077013712372164
+                format: double
+            category:
+                type: string
+                description: category
+                example: Corporis laudantium suscipit.
+            memo:
+                type: string
+                description: memo
+                example: Voluptatem earum.
+        example:
+            amount: 0.6953490762593912
+            category: Aut nostrum ea odit perspiciatis impedit.
+            memo: Occaecati alias qui deleniti cum dolores tenetur.
+        required:
+            - amount
+            - category
+    ExpenseAddExpenseResponseBody:
+        title: ExpenseAddExpenseResponseBody
+        type: object
+        properties:
+            message:
+                type: string
+                description: message
+                example: Ducimus et assumenda.
+        example:
+            message: Ut est sapiente alias nulla aperiam qui.

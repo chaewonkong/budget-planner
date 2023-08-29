@@ -4,9 +4,15 @@ github.com/AnatolyRugalev/goregen
 # github.com/dimfeld/httppath v0.0.0-20170720192232-ee938bf73598
 ## explicit
 github.com/dimfeld/httppath
+# github.com/dimfeld/httptreemux/v5 v5.5.0
+## explicit; go 1.9
+github.com/dimfeld/httptreemux/v5
 # github.com/google/uuid v1.3.1
 ## explicit
 github.com/google/uuid
+# github.com/gorilla/websocket v1.5.0
+## explicit; go 1.12
+github.com/gorilla/websocket
 # github.com/manveru/faker v0.0.0-20171103152722-9fbc68a78c4d
 ## explicit
 github.com/manveru/faker
@@ -18,6 +24,9 @@ github.com/sergi/go-diff/diffmatchpatch
 goa.design/goa/v3/dsl
 goa.design/goa/v3/eval
 goa.design/goa/v3/expr
+goa.design/goa/v3/http
+goa.design/goa/v3/http/middleware
+goa.design/goa/v3/middleware
 goa.design/goa/v3/pkg
 # golang.org/x/mod v0.12.0
 ## explicit; go 1.17
